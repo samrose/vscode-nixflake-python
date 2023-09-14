@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = github:nixos/nixpkgs/nixos-unstable;
+    nixpkgs.url = github:nixos/nixpkgs/nixpkgs-unstable;
     flake-utils.url = github:numtide/flake-utils;
   };
 
@@ -12,10 +12,9 @@
           config.allowUnfree = true;
         };
 
-        demos = pkgs.callPackage ./. { };
+        pythonenv = pkgs.callPackage ./. { };
       in
       {
-        packages = { inherit demos; };
-        devShell = demos.shell;
+        devShell = pythonenv.shell;
       });
 }

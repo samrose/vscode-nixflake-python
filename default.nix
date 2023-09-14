@@ -6,19 +6,11 @@ let
   myvscode = pkgs.vscode-with-extensions.override {
     vscodeExtensions = with pkgs.vscode-extensions; [
       ms-python.python
-      ms-toolsai.jupyter
-      ms-toolsai.jupyter-keymap
-      ms-toolsai.jupyter-renderers
-      ms-toolsai.vscode-jupyter-cell-tags
-      ms-toolsai.vscode-jupyter-slideshow
     ];
   };
 
   pythonRunPackages = with python.pkgs;[
     python
-    ipywidgets
-    jupyter
-    ipykernel
     plotly
   ];
 
